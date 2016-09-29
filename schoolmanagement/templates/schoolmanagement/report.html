@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+<div style="float:right;">
+<a href="{% url 'classes' '1' %}">I</a>
+<a href="{% url 'classes' '2' %}">II</a>
+<a href="{% url 'classes' '3' %}">III</a>
+<a href="{% url 'classes' '4' %}">IV</a>
+<a href="{% url 'classes' '5' %}">V</a>
+</div>
+    <table align="center">
+    <tr>
+            <th>NAME OF STUDENT</th>
+            <th>Class</th>
+            <th><a href="{% url 'subject' 'TAMIL' classes_id %}">TAMIL</a></th>
+            <th><a href="{% url 'subject' 'TELUGU' classes_id %}">TELUGU</a></th>
+            <th><a href="{% url 'subject' 'ENGLISH' classes_id %}">ENGLISH</a></th>
+            <th><a href="{% url 'subject' 'MATHS' classes_id %}">MATHS</a></th>
+            <th><a href="{% url 'subject' 'SCIENCE' classes_id %}">SCIENCE</a></th>
+            <th><a href="{% url 'subject' 'SOCIAL' classes_id %}">SOCIAL</a></th>
+            <th>TOTAL</th>
+    </tr>
+    {% for objects in student %}
+            <tr>
+                <td>{{ objects.student_name }}</td>
+                <td>{{ objects.year_of_class }} th standard</td>
+                <td>
+                {{ objects.subjects.tamil }}
+                </td><td>
+                {{ objects.subjects.telugu }}
+                </td><td>
+                {{ objects.subjects.english }}
+                </td><td>
+                {{ objects.subjects.maths }}
+                </td><td>
+                {{ objects.subjects.science }}
+                </td><td>
+                {{ objects.subjects.social }}
+                </td><td>
+                    Total
+                </td>
+            </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

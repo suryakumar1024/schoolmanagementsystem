@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center">
+    <tr>
+            <th>NAME OF STUDENT</th>
+            <th>MARK</th>
+    </tr>
+
+    {% for objects in student %}
+    {% if subject == 'TAMIL' %}
+            <tr>
+                <td>{{ objects.student_name }}</td>
+                <td>
+                {{ objects.subjects.tamil }}
+                </td>
+            </tr>
+    {% endif %}
+    {% if subject == 'TELUGU' %}
+            <tr>
+                <td>{{ objects.student_name }}</td>
+                <td>
+                {{ objects.subjects.telugu }}
+                </td>
+            </tr>
+    {% endif %}
+    {% if subject == 'ENGLISH' %}
+            <tr>
+                <td>{{ objects.student_name }}</td>
+                <td>
+                {{ objects.subjects.english }}
+                </td>
+            </tr>
+    {% endif %}
+    {% if subject == 'MATHS' %}
+            <tr>
+                <td>{{ objects.student_name }}</td>
+                <td>
+                {{ objects.subjects.maths }}
+                </td>
+            </tr>
+    {% endif %}
+
+    {% if subject == 'SCIENCE' %}
+            <tr>
+                <td>{{ objects.student_name }}</td>
+                <td>
+                {{ objects.subjects.science }}
+                </td>
+            </tr>
+    {% endif %}
+    {% if subject == 'SOCIAL' %}
+            <tr>
+                <td>{{ objects.student_name }}</td>
+                <td>
+                {{ objects.subjects.social }}
+                </td>
+            </tr>
+    {% endif %}
+    {% endfor %}
+    </table>
+</body>
+</html>
